@@ -47,12 +47,15 @@ for i in range(6):
 
 # compile each frame
 output_frames = []
+over_x = (width * amogus_size) % amogus_size
+over_y = (height * amogus_size) % amogus_size
 for i in range(6): 
     converted = color_to_alpha(ImageEnhance.Contrast(frames[i]).enhance(2.0), (255, 255, 0, 255)) # make body of each frame transparent
     output_frame = copy.deepcopy(bkg)
     for j in range(int(width)): 
         for k in range(int(height)): 
             output_frame.paste(converted.convert("RGB"), (j * amogus_size, k * amogus_size), mask=converted) # overlay amogus onto previously colored background
+    output_frame = output_frame.crop((0, 0, width * amogus_size - over_x, height * amogus_size - over_y)) # crop extraneous pixels
     output_frames.append(output_frame)
 
 # save frame to output folder
