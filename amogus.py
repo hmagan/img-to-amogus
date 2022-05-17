@@ -5,7 +5,7 @@ import glob, os, copy, argparse
 # handle arguments from the command line
 parser = argparse.ArgumentParser("image_to_amogus")
 parser.add_argument("path", help="Path to target image, where the /target/ folder is the current directory.", type=str)
-parser.add_argument("-size", help="Integer representing the size length of square images, and the length of the shortest side in rectangular images (16 by default).", type=int, required=False, default=16)
+parser.add_argument("-size", help="Integer representing the side length of square images, and the length of the shortest side in rectangular images (16 by default).", type=int, required=False, default=16)
 args = parser.parse_args()
 
 # size of each amogus character (50x50)
