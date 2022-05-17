@@ -23,7 +23,7 @@ positional arguments:
 
 optional arguments:
   -h, --help  show this help message and exit
-  -size SIZE  Integer representing the size length of square images, and the
+  -size SIZE  Integer representing the side length of square images, and the
               length of the shortest side in rectangular images (16 by
               default).
 ```
